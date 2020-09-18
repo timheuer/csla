@@ -29,3 +29,6 @@ jobs:
 
     - name: Build
       run: msbuild ${{ env.AZURE_WEBAPP_NAME }} /p:Configuration=Release
+
+    - name: Test
+      run: mstest.exe /testcontainer:Source\Csla.test\bin\cs\Debug\csla.test.dll
