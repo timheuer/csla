@@ -45,8 +45,8 @@ jobs:
     # restore packages
     - name: Restore packages
       run: |
-        msbuild ${{ env.CSLA_BUILD_SLN }} -t:Restore
-        msbuild ${{ env.CSLA_TEST_SLN }} -t:Restore
+        msbuild ${{ env.CSLA_BUILD_SLN }} -t:Restore /p:Configuration=Release
+        msbuild ${{ env.CSLA_TEST_SLN }} -t:Restore /p:Configuration=Release
 
     # build tests
     - name: Build tests
